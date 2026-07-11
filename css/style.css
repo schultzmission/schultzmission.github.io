@@ -18,6 +18,10 @@ body {
     color: #333;
 }
 
+:root {
+    --social-icon-color: #FF0000;
+}
+
 
 /* ==========================================================
    HERO SECTION
@@ -311,3 +315,112 @@ h1 {
 
     text-decoration: underline;
 }
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+footer {
+
+    margin-top: 30px;
+
+    padding: 20px 10px;
+
+    text-align: center;
+}
+
+/* ==========================================================
+   SOCIAL SECTION
+   Social follow links moved outside the header.
+   ========================================================== */
+
+.social-section {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 20px 10px 30px;
+
+    text-align: center;
+}
+
+.social-section h2 {
+
+    margin-bottom: 18px;
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    color: #1d4f7a;
+}
+
+.social-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    align-items: stretch;
+
+}
+
+.social-links a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: #ffffff;
+
+    color: #1f2937;
+
+    border: 1px solid #d2d8e0;
+
+    box-shadow: 0 10px 25px rgba(31, 41, 55, 0.05);
+
+    border-radius: 18px;
+
+    padding: 16px 18px;
+
+    width: min(100%, 420px);
+
+    margin: 0 auto;
+
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+
+}
+
+.social-links a:hover {
+
+    background: #f4fbff;
+
+    border-color: #aac9e5;
+
+    transform: translateY(-1px);
+
+}
+
+.social-links img {
+
+    width: 28px;
+    
+    height: 28px;
+    
+    color: var(--social-icon-color);
+    
+}
+
+.social-links span {
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+}
+
