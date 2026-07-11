@@ -1,112 +1,313 @@
-/* ---------- General ---------- */
+/* ==========================================================
+   PAGE-WIDE SETTINGS
+   These affect the entire website unless overridden later.
+   ========================================================== */
 
 body {
+
+    /* Remove browser's default white border around page */
     margin: 0;
+
+    /* Light gray page background */
     background: #f7f7f7;
+
+    /* Default font used throughout site */
     font-family: "Segoe UI", sans-serif;
+
+    /* Default text color */
     color: #333;
 }
 
+
+/* ==========================================================
+   HERO SECTION
+   The main container holding:
+   - Photo
+   - Names
+   - Mission statement
+   - Buttons
+   - Social links
+
+   max-width prevents content becoming too wide on desktop.
+   margin:auto centers the container.
+   ========================================================== */
+
 .hero {
+
+    /* Maximum width of content area */
     max-width: 900px;
+
+    /* Center content horizontally */
     margin: auto;
-    padding: 20px 10px; /* distance from screen top to photo top | size of L/R margins*/
+
+    /* Top/Bottom padding | Left/Right padding */
+    padding: 20px 10px;
+
+    /* Center-align all text inside hero */
     text-align: center;
 }
 
-/* ---------- Photo ---------- */
+
+/* ==========================================================
+   FAMILY PHOTO
+   Controls image size, crop, and shape.
+   ========================================================== */
 
 .hero img {
+
+    /* Responsive width:
+       min 200px
+       preferred 90% of screen width
+       max 600px
+    */
     width: clamp(200px, 90vw, 600px);
+
+    /* Responsive height */
     height: clamp(70px, 43vw, 270px);
-    object-fit: cover ;
+
+    /* Fill frame without stretching image */
+    object-fit: cover;
+
+    /* Move crop area upward.
+       Increase second number to show lower parts.
+       Decrease to show more sky/head area.
+    */
     object-position: center 25%;
-    border-radius: 15px; /* size of the rounded edge */
+
+    /* Rounded corner size */
+    border-radius: 15px;
+
+    /* Space below photo */
     margin-bottom: 5px;
 }
 
-/* ---------- Typography ---------- */
 
-h1 {   /* style applies to heading 1 (title)*/
+/* ==========================================================
+   MAIN TITLE
+   Controls:
+   "Ben & Brianna Schultz"
+   ========================================================== */
+
+h1 {
+
+    /* Remove default heading spacing */
     margin: 0;
+
+    /* Responsive font size */
     font-size: clamp(1.8rem, 6vw, 2.6rem);
 }
 
+
+/* ==========================================================
+   MISSION STATEMENT
+   Controls:
+   "Serving Christ as Engineers..."
+   ========================================================== */
+
 .tagline {
+
+    /* Prevent text becoming too wide on desktop */
     max-width: 650px;
+
+    /* Top | Left/Right | Bottom spacing */
     margin: 5px auto 20px;
+
+    /* Space between wrapped lines */
     line-height: 1.7;
+
+    /* Text size */
     font-size: 1rem;
+
+    /* Slightly lighter than main text */
     color: #555;
 }
 
-/* ---------- Buttons ---------- */
+
+/* ==========================================================
+   PRIMARY ACTION BUTTONS
+   Controls:
+   - Give to Our Ministry
+   - Join Our Newsletter
+
+   Flexbox stacks buttons vertically.
+   ========================================================== */
 
 .primary-links {
+
+    /* Turn on Flexbox */
     display: flex;
+
+    /* Stack children vertically */
     flex-direction: column;
+
+    /* Space between buttons */
     gap: 14px;
+
+    /* Center buttons horizontally */
     align-items: center;
+
+    /* Space below button section */
     margin-bottom: 20px;
 }
+
+
+/* ==========================================================
+   SHARED BUTTON STYLING
+
+   Applies to:
+   - Give button
+   - Newsletter button
+   - Social media buttons
+
+   Anything here affects ALL of them.
+   ========================================================== */
 
 .primary-button,
 .secondary-button,
 .social-links a {
 
+    /* Make entire button clickable */
     display: block;
 
+    /* Remove underline */
     text-decoration: none;
 
+    /* Internal spacing around text */
     padding: 16px;
 
+    /* Rounded corners */
     border-radius: 10px;
 
+    /* Semi-bold text */
     font-weight: 600;
 
+    /* Smooth hover animation */
     transition: .2s;
 }
 
+
+/* ==========================================================
+   DONATION BUTTON
+   ========================================================== */
+
 .primary-button {
+
     background: #1d4f7a;
     color: white;
 }
 
 .primary-button:hover {
+
+    /* Darker blue when mouse hovers */
     background: #286696;
 }
 
+
+/* ==========================================================
+   NEWSLETTER BUTTON
+   ========================================================== */
+
 .secondary-button {
+
     background: white;
+
     color: #1d4f7a;
+
     border: 2px solid #1d4f7a;
 }
 
 .secondary-button:hover {
+
     background: #eef5fb;
 }
 
+
+/* ==========================================================
+   SOCIAL MEDIA SECTION
+   Controls layout of Facebook/Instagram/etc.
+   ========================================================== */
+
 .social-links {
+
     display: flex;
+
+    /* Stack social buttons vertically */
     flex-direction: column;
+
+    /* Space between social buttons */
     gap: 12px;
-    
+
+    /* Set width to fit text*/
+    align-items: center;
+
 }
 
+
+/* ==========================================================
+   INDIVIDUAL SOCIAL BUTTONS
+   ========================================================== */
+
 .social-links a {
+
+    /* Icon and text side-by-side */
     display: flex;
+
+    /* Vertically align icon and text */
     align-items: center;
+
+    /* Space between icon and text */
     gap: 12px;
+
     background: white;
+
     color: #333;
+
     border: 1px solid #ddd;
 }
 
-.social-links img {
-    width: 24px;
-    height: 24px;
+.social-links a:hover {
+
+    background: #f2f2f2;
 }
 
-.social-links a:hover {
-    background: #f2f2f2;
+
+/* ==========================================================
+   SOCIAL MEDIA ICONS
+   Controls ONLY the SVG icon size.
+   ========================================================== */
+
+.social-links img {
+
+    width: 24px; /* width of the icons */
+    
+    height: 24px;
+    
+    border-radius: 0px;
+}
+
+/* ==========================================================
+   CONTACT INFORMATION
+   ========================================================== */
+
+.contact {
+
+    margin-top: 25px;
+
+    font-size: 0.95rem;
+
+    color: #666;
+}
+
+.contact a {
+
+    color: #1d4f7a;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.contact a:hover {
+
+    text-decoration: underline;
 }
