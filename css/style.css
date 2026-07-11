@@ -21,6 +21,7 @@ body {
 :root {
     --primary-brand-color: #1d4f7a;
     --social-icon-color: var(--primary-brand-color);
+    --social-button-width: 200px;
 }
 
 
@@ -373,6 +374,8 @@ footer {
 
     display: flex;
 
+    justify-content: center;
+
     align-items: center;
 
     gap: 14px;
@@ -389,7 +392,7 @@ footer {
 
     padding: 16px 18px;
 
-    width: min(100%, 420px);
+    width: min(100%, var(--social-button-width));
 
     margin: 0 auto;
 
