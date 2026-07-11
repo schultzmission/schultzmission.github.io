@@ -19,7 +19,8 @@ body {
 }
 
 :root {
-    --social-icon-color: #FF0000;
+    --primary-brand-color: #1d4f7a;
+    --social-icon-color: var(--primary-brand-color);
 }
 
 
@@ -378,7 +379,7 @@ footer {
 
     background: #ffffff;
 
-    color: #1f2937;
+    color: var(--primary-brand-color);
 
     border: 1px solid #d2d8e0;
 
@@ -406,14 +407,60 @@ footer {
 
 }
 
-.social-links img {
+.social-icon {
 
     width: 28px;
-    
+
     height: 28px;
-    
-    color: var(--social-icon-color);
-    
+
+    flex-shrink: 0;
+
+    background-color: var(--social-icon-color);
+
+    mask-size: contain;
+
+    mask-repeat: no-repeat;
+
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+
+    -webkit-mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+
+}
+
+.social-icon.facebook {
+
+    mask-image: url("../icons/facebook.svg");
+
+    -webkit-mask-image: url("../icons/facebook.svg");
+
+}
+
+.social-icon.instagram {
+
+    mask-image: url("../icons/instagram.svg");
+
+    -webkit-mask-image: url("../icons/instagram.svg");
+
+}
+
+.social-icon.youtube {
+
+    mask-image: url("../icons/youtube.svg");
+
+    -webkit-mask-image: url("../icons/youtube.svg");
+
+}
+
+.social-icon.tiktok {
+
+    mask-image: url("../icons/tiktok.svg");
+
+    -webkit-mask-image: url("../icons/tiktok.svg");
+
 }
 
 .social-links span {
