@@ -1,0 +1,112 @@
+/* ---------- General ---------- */
+
+body {
+    margin: 0;
+    background: #f7f7f7;
+    font-family: "Segoe UI", sans-serif;
+    color: #333;
+}
+
+.hero {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 10px; /* distance from screen top to photo top | size of L/R margins*/
+    text-align: center;
+}
+
+/* ---------- Photo ---------- */
+
+.hero img {
+    width: clamp(200px, 90vw, 600px);
+    height: clamp(70px, 43vw, 270px);
+    object-fit: cover ;
+    object-position: center 25%;
+    border-radius: 15px; /* size of the rounded edge */
+    margin-bottom: 5px;
+}
+
+/* ---------- Typography ---------- */
+
+h1 {   /* style applies to heading 1 (title)*/
+    margin: 0;
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+}
+
+.tagline {
+    max-width: 650px;
+    margin: 5px auto 20px;
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ---------- Buttons ---------- */
+
+.primary-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.primary-button,
+.secondary-button,
+.social-links a {
+
+    display: block;
+
+    text-decoration: none;
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.primary-button {
+    background: #1d4f7a;
+    color: white;
+}
+
+.primary-button:hover {
+    background: #286696;
+}
+
+.secondary-button {
+    background: white;
+    color: #1d4f7a;
+    border: 2px solid #1d4f7a;
+}
+
+.secondary-button:hover {
+    background: #eef5fb;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-links a:hover {
+    background: #f2f2f2;
+}
