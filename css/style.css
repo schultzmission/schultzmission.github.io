@@ -227,68 +227,6 @@ h1 {
 }
 
 
-/* ==========================================================
-   SOCIAL MEDIA SECTION
-   Controls layout of Facebook/Instagram/etc.
-   ========================================================== */
-
-.social-links {
-
-    display: flex;
-
-    /* Stack social buttons vertically */
-    flex-direction: column;
-
-    /* Space between social buttons */
-    gap: 12px;
-
-    /* Set width to fit text*/
-    align-items: center;
-
-}
-
-
-/* ==========================================================
-   INDIVIDUAL SOCIAL BUTTONS
-   ========================================================== */
-
-.social-links a {
-
-    /* Icon and text side-by-side */
-    display: flex;
-
-    /* Vertically align icon and text */
-    align-items: center;
-
-    /* Space between icon and text */
-    gap: 12px;
-
-    background: white;
-
-    color: #333;
-
-    border: 1px solid #ddd;
-}
-
-.social-links a:hover {
-
-    background: #f2f2f2;
-}
-
-
-/* ==========================================================
-   SOCIAL MEDIA ICONS
-   Controls ONLY the SVG icon size.
-   ========================================================== */
-
-.social-links img {
-
-    width: 24px; /* width of the icons */
-    
-    height: 24px;
-    
-    border-radius: 0px;
-}
 
 /* ==========================================================
    CONTACT INFORMATION
@@ -359,13 +297,13 @@ footer {
 
 .social-links {
 
-    display: flex;
+    display: block;
 
-    flex-direction: column;
+    width: max-content;
+
+    margin: 0 auto;
 
     gap: 14px;
-
-    align-items: stretch;
 
 }
 
@@ -374,6 +312,8 @@ footer {
     display: flex;
 
     align-items: center;
+
+    justify-content: center;
 
     gap: 14px;
 
@@ -389,9 +329,7 @@ footer {
 
     padding: 16px 18px;
 
-    width: min(100%, 420px);
-
-    margin: 0 auto;
+    width: 100%;
 
     transition: background .2s ease, border-color .2s ease, transform .2s ease;
 
