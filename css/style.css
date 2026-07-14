@@ -116,7 +116,7 @@ h1 {
     max-width: 650px;
 
     /* Top | Left/Right | Bottom spacing */
-    margin: 5px auto 20px;
+    margin: 5px auto 15px;
 
     /* Space between wrapped lines */
     line-height: 1.7;
@@ -153,7 +153,7 @@ h1 {
     align-items: center;
 
     /* Space below button section */
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 
@@ -342,7 +342,7 @@ footer {
 
     margin: 0 auto;
 
-    padding: 20px 10px 30px;
+    padding: 0px 10px 0px;
 
     text-align: center;
 }
