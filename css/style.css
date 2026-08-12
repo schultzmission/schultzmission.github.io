@@ -20,6 +20,7 @@ body {
 
 :root {
     --primary-brand-color: #1d4f7a;
+    --primary-brand-color-transparent: rgba(29, 79, 122, 0.85);
     --social-icon-color: var(--primary-brand-color);
     --social-button-width: 200px;
 }
@@ -684,10 +685,11 @@ because giving is one of the primary purposes of the site.
 .site-nav .nav-give {
 
     /* Blue background */
-    background: var(--primary-brand-color);
+    background: var(--primary-brand-color-transparent);
 
     /* White text */
     color: #ffffff;
+
 
 }
 
