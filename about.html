@@ -1,1 +1,518 @@
-<!--About Us page for mission website-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ==========================================================
+    BASIC PAGE INFORMATION
+    =========================================================== -->
+
+    <!-- Tells the browser this page uses modern HTML -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the website display properly on phones/tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Text shown in the browser tab -->
+    <title>About Us | Schultz Mission</title>
+
+    <!-- ==========================================================
+    SHARED WEBSITE CSS
+    This is the same CSS file used by the main page.
+    =========================================================== -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ==========================================================
+    WEBSITE HEADER
+    ===========================================================
+
+    This header will appear on the other pages of the website too.
+
+    The goal is to give visitors a consistent way to move around
+    the website regardless of which page they are currently viewing.
+
+    Navigation:
+
+        Home      -> returns to the main traffic-hub page
+        About Us  -> current page
+        Updates   -> takes visitors to past ministry updates
+        Give      -> takes visitors to the external giving page
+
+    =========================================================== -->
+
+    <header class="site-header">
+
+        <!-- Website / Ministry Name -->
+
+        <div class="site-title">
+            <a href="index.html">
+                Ben &amp; Brianna Schultz
+            </a>
+        </div>
+
+
+        <!-- ======================================================
+        MAIN WEBSITE NAVIGATION
+
+        These are links to OTHER PAGES or IMPORTANT DESTINATIONS.
+
+        Because all of these files are part of the same website,
+        we can link to them using their filenames.
+
+        Example:
+
+            href="index.html"
+
+        means:
+
+            "Go to index.html in this same website."
+
+        ======================================================= -->
+
+        <nav class="site-nav">
+
+            <!-- HOME -->
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <!-- ABOUT US -->
+
+            <!--
+            This is the page we are currently on.
+
+            It is still useful to include the link here because
+            visitors should be able to see the complete navigation
+            from every page.
+            -->
+            <a href="about.html">
+                About Us
+            </a>
+
+
+            <!-- UPDATES -->
+
+            <!--
+            This page does not have to exist yet.
+
+            Later we can create:
+
+                updates.html
+
+            and this link will take visitors there.
+            -->
+            <a href="updates.html">
+                Updates
+            </a>
+
+
+            <!-- GIVE -->
+
+            <!--
+            This is NOT another page on our website.
+
+            Instead, it sends the visitor directly to the
+            external giving page.
+
+            target="_blank" opens the giving page in a new tab.
+
+            rel="noopener" is a security best practice when
+            opening an external website in a new tab.
+            -->
+            <a class="nav-give"
+               href="https://give.team.org/fundraiser/6492006"
+               target="_blank"
+               rel="noopener">
+
+                Give
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================================================
+    MAIN PAGE CONTENT
+    ===========================================================
+
+    Everything specific to the About Us page goes inside <main>.
+
+    This helps keep the website organized and is good semantic HTML.
+
+    =========================================================== -->
+
+    <main class="about-page">
+
+
+        <!-- ======================================================
+        PAGE INTRODUCTION
+        =======================================================
+
+        This is the first thing visitors see after the navigation.
+
+        Think of this as the "front door" to the detailed version
+        of your ministry story.
+
+        ======================================================= -->
+
+        <section class="about-intro">
+
+            <!-- Main page heading -->
+            <h1>About Us</h1>
+
+
+            <!-- Short introductory statement -->
+
+            <p>
+                We are Ben and Brianna Schultz, serving Christ as
+                engineers and missionaries in Zimbabwe at
+                Karanda Mission Hospital.
+            </p>
+
+        </section>
+
+
+
+        <!-- ======================================================
+        PHOTO / INTRODUCTION SECTION
+        =======================================================
+
+        This section can introduce the two of you.
+
+        We can replace the image filename with whatever picture
+        you eventually want to use.
+
+        ======================================================= -->
+
+        <section class="about-section">
+
+            <h2>Who We Are</h2>
+
+
+            <!--
+            Replace this image with the picture you want to use.
+
+            Example:
+
+                images/ben-and-brianna.jpg
+
+            Make sure the image actually exists at that location.
+            -->
+
+            <img
+                class="about-image"
+                src="images/skidPic.jpg"
+                alt="Ben and Brianna Schultz"
+            >
+
+
+            <!--
+            This is placeholder text.
+
+            You can replace this with your actual story later.
+
+            I intentionally recommend keeping the HTML simple:
+            normal paragraphs are much easier to edit than building
+            complicated layouts.
+            -->
+
+            <p>
+                We are Ben and Brianna Schultz, and we are excited to
+                serve Christ through engineering and missions in Zimbabwe.
+            </p>
+
+            <p>
+                Our ministry is based at Karanda Mission Hospital,
+                where we have the opportunity to serve alongside the
+                hospital staff and the broader mission community.
+            </p>
+
+        </section>
+
+
+
+        <!-- ======================================================
+        OUR CALLING
+        ======================================================= -->
+
+        <section class="about-section">
+
+            <h2>Our Calling</h2>
+
+
+            <p>
+                <!--
+                Replace this paragraph with your actual story.
+
+                You might explain:
+                - How you became interested in missions
+                - How God led you toward Zimbabwe
+                - Why engineering became part of your ministry
+                - Why you chose Karanda
+                -->
+
+                This is where we can tell the story of how God led us
+                toward missions and eventually to serving in Zimbabwe.
+            </p>
+
+        </section>
+
+
+
+        <!-- ======================================================
+        OUR MISSION
+        =======================================================
+
+        This is a good place for your actual mission statement.
+
+        ======================================================= -->
+
+        <section class="about-section">
+
+            <h2>Our Mission</h2>
+
+
+            <!--
+            You could eventually make this a highlighted quote/card
+            if you decide you want the mission statement to stand out.
+            -->
+
+            <p class="mission-statement">
+
+                Our desire is to serve Christ by using the skills,
+                opportunities, and relationships God has given us
+                to support the ministry of Karanda Mission Hospital.
+
+            </p>
+
+
+            <!--
+            Add additional explanation here if desired.
+
+            The mission statement itself can remain short while
+            the paragraphs below explain what it means in practice.
+            -->
+
+            <p>
+                Through our work and relationships at Karanda, we hope
+                to contribute to the hospital's mission of caring for
+                people and sharing the love of Christ.
+            </p>
+
+        </section>
+
+
+
+        <!-- ======================================================
+        KARANDA MISSION HOSPITAL
+        ======================================================= -->
+
+        <section class="about-section">
+
+            <h2>Karanda Mission Hospital: Serving God Serving Others</h2>
+
+
+            <p>
+                <!--
+                Explain what Karanda is and why it matters to your
+                ministry.
+
+                This could eventually include:
+                - Location
+                - History
+                - Size
+                - Medical ministry
+                - Spiritual ministry
+                - Engineering needs
+                - The people Karanda serves
+                -->
+
+                Karanda Mission Hospital demonstrates Christ's love by providing essential healthcare 
+                to patients in need from not only across remote Zimbabwe but also from neighboring Mozambique, 
+                Zambia, and Botswana. With 150 beds, it handles 3,800 surgeries each year over 2,000 
+                deliveries, and treats various conditions, including HIV/AIDS. In 2025 the hospital 
+                provided almost 140,000 outpatient services and had 7,500 inpatient admissions.
+            </p>
+
+            <p>
+                Learn more about Karanda Mission Hospital at
+                <a href="https://www.karanda.org" target="_blank" rel="noopener">
+                    www.karanda.org
+                </a>
+</p>
+
+        </section>
+
+
+
+        <!-- ======================================================
+        ENGINEERING & MINISTRY
+        =======================================================
+
+        This section could become particularly useful for explaining
+        why engineering is part of your missionary work.
+
+        ======================================================= -->
+
+        <section class="about-section">
+
+            <h2>Engineering &amp; Ministry</h2>
+
+
+            <p>
+                <!--
+                Explain what you actually do as engineers.
+
+                For example:
+                - Projects
+                - Maintenance
+                - Infrastructure
+                - Power
+                - Water
+                - Medical equipment
+                - Construction
+                - Training
+                -->
+
+                Our engineering work allows us to serve the hospital
+                in practical ways while working alongside the people
+                who make up the Karanda community.
+            </p>
+
+        </section>
+
+
+
+        <!-- ======================================================
+        INTRODUCTION VIDEO
+        =======================================================
+
+        We don't need to build this yet.
+
+        When you have a video, we can decide whether it should be:
+
+        1. A YouTube embed
+        2. A locally hosted video
+        3. A thumbnail that links to the video
+
+        For now, this section gives us a place to put it.
+
+        ======================================================= -->
+
+        <section class="about-section">
+
+            <h2>Meet Us</h2>
+
+
+            <p>
+                Want to hear more about who we are and why we are
+                serving in Zimbabwe?
+            </p>
+
+
+            <!--
+            VIDEO WILL GO HERE LATER.
+
+            Example of what this might eventually look like:
+
+                <iframe ...></iframe>
+
+            Don't add that until we decide exactly where the video
+            is hosted.
+            -->
+
+            <p>
+                <em>Our introduction video will be added here.</em>
+            </p>
+
+        </section>
+
+
+
+        <!-- ======================================================
+        WANT TO FOLLOW ALONG?
+        =======================================================
+
+        This gives visitors a logical next step after reading
+        the About page.
+
+        ======================================================= -->
+
+        <section class="about-section">
+
+            <h2>Follow Our Journey</h2>
+
+
+            <p>
+                If you'd like to stay connected with our ministry,
+                you can follow our updates or find us on social media.
+            </p>
+
+
+            <!-- Link to Updates page -->
+
+            <p>
+                <a class="about-button" href="updates.html">
+                    Read Our Updates
+                </a>
+            </p>
+
+
+            <!-- Link to external giving page -->
+
+            <p>
+                <a class="about-button"
+                   href="https://give.team.org/fundraiser/6492006"
+                   target="_blank"
+                   rel="noopener">
+
+                    Give to Our Ministry
+
+                </a>
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==========================================================
+    FOOTER
+    ===========================================================
+
+    The footer can eventually be shared across all pages.
+
+    It provides another place for visitors to find contact
+    information.
+
+    =========================================================== -->
+
+    <footer>
+
+        <p class="contact">
+
+            Contact:
+
+            <a href="mailto:benandbriannaschultz@gmail.com">
+                benandbriannaschultz@gmail.com
+            </a>
+
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
+```

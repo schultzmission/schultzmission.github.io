@@ -524,3 +524,541 @@ footer {
 
 }
 
+
+/* ==========================================================
+ABOUT PAGE
+These styles are used by about.html.
+
+The existing CSS above this section controls the original
+home page. These styles are specifically for the new pages.
+========================================================== */
+
+
+/* ==========================================================
+SITE HEADER
+This is the navigation bar that appears at the top of the
+About page and eventually the Updates page as well.
+========================================================== */
+
+.site-header {
+
+    /* ------------------------------------------------------
+    Keep the header visible while scrolling.
+
+    "sticky" means the header behaves normally until the
+    visitor scrolls, then it stays at the top of the screen.
+    ------------------------------------------------------ */
+    position: sticky;
+
+    /* Stick to the very top of the browser window */
+    top: 0;
+
+    /* Make sure the header stays above the page content */
+    z-index: 1000;
+
+    /* White background so text remains easy to read */
+    background: #ffffff;
+
+    /* Bottom border gives the header some separation */
+    border-bottom: 1px solid #d2d8e0;
+
+    /* Small shadow underneath the header */
+    box-shadow: 0 2px 10px rgba(31, 41, 55, 0.08);
+
+    /* Internal spacing */
+    padding: 12px 10px;
+
+}
+
+
+/* ==========================================================
+SITE TITLE
+"Ben & Brianna Schultz" inside the navigation header.
+========================================================== */
+
+.site-title {
+
+    /* Center the name */
+    text-align: center;
+
+    /* Space below the name before navigation links */
+    margin-bottom: 8px;
+
+}
+
+
+/* The link containing the website name */
+
+.site-title a {
+
+    /* Remove the normal hyperlink underline */
+    text-decoration: none;
+
+    /* Use our primary blue */
+    color: var(--primary-brand-color);
+
+    /* Make the name stand out */
+    font-weight: 700;
+
+    /* Slightly larger than normal text */
+    font-size: 1.15rem;
+
+}
+
+
+/* ==========================================================
+SITE NAVIGATION
+Contains:
+
+Home
+About Us
+Updates
+Give
+========================================================== */
+
+.site-nav {
+
+    /* Flexbox puts the navigation links in a row */
+    display: flex;
+
+    /* Center the navigation horizontally */
+    justify-content: center;
+
+    /* Allow links to wrap onto another line on small screens */
+    flex-wrap: wrap;
+
+    /* Space between links */
+    gap: 8px;
+
+}
+
+
+/* ==========================================================
+NORMAL NAVIGATION LINKS
+Home / About Us / Updates
+========================================================== */
+
+.site-nav a {
+
+    /* Remove underline */
+    text-decoration: none;
+
+    /* Use our normal text color */
+    color: #333;
+
+    /* Give each link some clickable area */
+    padding: 7px 10px;
+
+    /* Rounded corners */
+    border-radius: 8px;
+
+    /* Slightly bold */
+    font-weight: 600;
+
+    /* Smooth hover animation */
+    transition: background .2s ease,
+                color .2s ease;
+
+}
+
+
+/* Hover effect for normal navigation links */
+
+.site-nav a:hover {
+
+    /* Very light blue background */
+    background: #eef5fb;
+
+    /* Brand blue text */
+    color: var(--primary-brand-color);
+
+}
+
+
+/* ==========================================================
+GIVE BUTTON IN THE NAVIGATION
+This is intentionally different from the other links
+because giving is one of the primary purposes of the site.
+========================================================== */
+
+.site-nav .nav-give {
+
+    /* Blue background */
+    background: var(--primary-brand-color);
+
+    /* White text */
+    color: #ffffff;
+
+}
+
+
+/* Give button hover */
+
+.site-nav .nav-give:hover {
+
+    /* Same darker blue used by your existing buttons */
+    background: #286696;
+
+    /* Keep text white */
+    color: #ffffff;
+
+}
+
+
+/* ==========================================================
+ABOUT PAGE CONTAINER
+Controls the overall width of the About page.
+
+This follows the same 900px maximum width you already use
+on your home page.
+========================================================== */
+
+.about-page {
+
+    /* Prevent text from becoming extremely wide */
+    max-width: 900px;
+
+    /* Center the page */
+    margin: 0 auto;
+
+    /* Space around the content */
+    padding: 30px 10px;
+
+}
+
+
+/* ==========================================================
+ABOUT PAGE INTRODUCTION
+The opening section at the top of the page.
+========================================================== */
+
+.about-intro {
+
+    /* Center the introduction */
+    text-align: center;
+
+    /* Space below the introduction */
+    margin-bottom: 35px;
+
+}
+
+
+/* Main "About Us" heading */
+
+.about-intro h1 {
+
+    /* Use your existing responsive heading size */
+    font-size: clamp(2rem, 7vw, 3rem);
+
+    /* Use your brand color */
+    color: var(--primary-brand-color);
+
+    /* Remove excessive browser spacing */
+    margin: 0 0 10px;
+
+}
+
+
+/* Introductory paragraph */
+
+.about-intro p {
+
+    /* Prevent very wide lines */
+    max-width: 700px;
+
+    /* Center the paragraph */
+    margin: 0 auto;
+
+    /* Comfortable reading spacing */
+    line-height: 1.7;
+
+    /* Slightly larger than normal text */
+    font-size: 1.05rem;
+
+    /* Softer gray */
+    color: #555;
+
+}
+
+
+/* ==========================================================
+INDIVIDUAL ABOUT SECTIONS
+
+Each major section of the About page gets this class.
+
+Examples:
+
+Who We Are
+Our Calling
+Our Mission
+Karanda Mission Hospital
+Engineering & Ministry
+Meet Us
+========================================================== */
+
+.about-section {
+
+    /* White card background */
+    background: #ffffff;
+
+    /* Space inside each section */
+    padding: 25px;
+
+    /* Rounded corners */
+    border-radius: 15px;
+
+    /* Space between sections */
+    margin-bottom: 25px;
+
+    /* Very subtle border */
+    border: 1px solid #e1e5e9;
+
+    /* Very subtle shadow */
+    box-shadow: 0 8px 20px rgba(31, 41, 55, 0.04);
+
+}
+
+
+/* ==========================================================
+SECTION HEADINGS
+========================================================== */
+
+.about-section h2 {
+
+    /* Brand blue */
+    color: var(--primary-brand-color);
+
+    /* Slightly smaller than the main page heading */
+    font-size: 1.5rem;
+
+    /* Space below heading */
+    margin-top: 0;
+
+    /* Space below before paragraph */
+    margin-bottom: 15px;
+
+}
+
+
+/* ==========================================================
+ABOUT PAGE PARAGRAPHS
+========================================================== */
+
+.about-section p {
+
+    /* Comfortable line spacing */
+    line-height: 1.7;
+
+    /* Space between paragraphs */
+    margin: 0 0 15px;
+
+}
+
+
+/* Remove bottom margin from the final paragraph
+inside a section */
+
+.about-section p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* ==========================================================
+ABOUT PAGE IMAGE
+========================================================== */
+
+.about-image {
+
+    /* Responsive width */
+
+    width: 100%;
+
+    /* Don't allow the image to become enormous */
+
+    max-width: 600px;
+
+    /* Keep the image centered */
+
+    display: block;
+
+    margin: 0 auto 20px;
+
+    /* Rounded corners to match your existing design */
+
+    border-radius: 15px;
+
+}
+
+
+/* ==========================================================
+MISSION STATEMENT
+
+This gives the actual mission statement a little more
+visual importance than an ordinary paragraph.
+========================================================== */
+
+.mission-statement {
+
+    /* Light blue background */
+
+    background: #eef5fb;
+
+    /* Blue line on the left */
+
+    border-left: 4px solid var(--primary-brand-color);
+
+    /* Space inside the highlighted area */
+
+    padding: 15px 18px;
+
+    /* Rounded right corners */
+
+    border-radius: 0 10px 10px 0;
+
+    /* Slightly emphasized text */
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================================
+ABOUT PAGE BUTTONS
+
+These are used for things like:
+
+Read Our Updates
+Give to Our Ministry
+
+They intentionally resemble your existing buttons.
+========================================================== */
+
+.about-button {
+
+    /* Make it look like a button */
+
+    display: inline-block;
+
+    /* Blue background */
+
+    background: var(--primary-brand-color);
+
+    /* White text */
+
+    color: #ffffff;
+
+    /* Remove underline */
+
+    text-decoration: none;
+
+    /* Internal spacing */
+
+    padding: 12px 18px;
+
+    /* Rounded corners */
+
+    border-radius: 10px;
+
+    /* Semi-bold */
+
+    font-weight: 600;
+
+    /* Smooth hover */
+
+    transition: background .2s ease,
+                transform .2s ease;
+
+}
+
+
+/* Hover effect */
+
+.about-button:hover {
+
+    /* Darker blue */
+
+    background: #286696;
+
+    /* Move upward slightly */
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ==========================================================
+LINKS INSIDE NORMAL ABOUT PAGE TEXT
+
+This controls links such as:
+
+www.karanda.org
+========================================================== */
+
+.about-section a:not(.about-button) {
+
+    /* Use brand blue */
+
+    color: var(--primary-brand-color);
+
+    /* Make the link noticeable */
+
+    font-weight: 600;
+
+}
+
+
+/* Hover effect for normal text links */
+
+.about-section a:not(.about-button):hover {
+
+    /* Underline when the mouse is over the link */
+
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================================
+MOBILE ADJUSTMENTS
+
+Most of your existing CSS is already responsive.
+
+This section simply makes the About cards a little more
+comfortable on smaller screens.
+========================================================== */
+
+@media (max-width: 600px) {
+
+
+    /* Reduce the amount of padding inside the cards */
+
+    .about-section {
+
+        padding: 20px;
+
+    }
+
+
+    /* Slightly reduce the header spacing */
+
+    .site-header {
+
+        padding: 10px 6px;
+
+    }
+
+
+    /* Make navigation links slightly smaller */
+
+    .site-nav a {
+
+        padding: 6px 8px;
+
+        font-size: 0.95rem;
+
+    }
+
+
+}
