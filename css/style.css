@@ -170,6 +170,7 @@ h1 {
 
 .primary-button,
 .secondary-button,
+.tertiary-button,
 .social-links a {
 
     /* Remove underline */
@@ -189,7 +190,8 @@ h1 {
 }
 
 .primary-button,
-.secondary-button {
+.secondary-button,
+.tertiary-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,6 +221,9 @@ h1 {
     color: #1d4f7a;
 }
 
+.tertiary-button .button-icon {
+    color: #ffffff;
+}
 
 /* ==========================================================
    DONATION BUTTON
@@ -255,6 +260,21 @@ h1 {
     background: #eef5fb;
 }
 
+/* ==========================================================
+   About Us BUTTON
+   ========================================================== */
+
+.tertiary-button {
+
+    background: #1d4f7a;
+    color: white;
+}
+
+.tertiary-button:hover {
+
+    /* Darker blue when mouse hovers */
+    background: #286696;
+}
 
 /* ==========================================================
    SOCIAL MEDIA SECTION
