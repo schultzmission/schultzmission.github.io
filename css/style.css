@@ -2466,6 +2466,68 @@ footer {
 }
 
 
+/* This button invites visitors to subscribe before browsing old updates. */
+.updates-newsletter-button {
+
+    /* Keep the button centered and limit its width for a balanced layout. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 200px;
+    max-width: 100%;
+    margin: 0 auto 28px;
+    padding: 12px 16px;
+
+    /* Give the newsletter action its requested green theme. */
+    background: var(--about-light-green);
+    border: 2px solid var(--about-green);
+    border-radius: 10px;
+    color: var(--about-green);
+    font-weight: 700;
+    text-decoration: none;
+
+    /* Make hover and keyboard feedback feel consistent with other buttons. */
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+
+/* Keep the newsletter icon the same size as the site's other button icons. */
+.updates-newsletter-button .button-icon {
+
+    color: var(--about-green);
+
+}
+
+
+/* Darken the green button when visitors point at it. */
+.updates-newsletter-button:hover {
+
+    background: var(--about-green);
+    color: var(--about-white);
+    box-shadow: 0 6px 14px rgba(95, 143, 114, 0.2);
+
+}
+
+
+/* Keep keyboard focus visible for visitors navigating without a mouse. */
+.updates-newsletter-button:focus-visible {
+
+    outline: 3px solid var(--about-gold);
+    outline-offset: 3px;
+
+}
+
+
+/* Make the icon follow the button text color on hover. */
+.updates-newsletter-button:hover .button-icon {
+
+    color: var(--about-white);
+
+}
+
+
 /* Remove the hero's normal top padding only on the homepage. */
 .index-header + .hero {
 
