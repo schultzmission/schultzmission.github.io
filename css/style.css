@@ -2160,3 +2160,286 @@ footer {
     }
 
 }
+
+
+/* ==========================================================
+   UPDATES PAGE FORMATTING STARTS BELOW
+   ==========================================================
+   ========================================================== */
+
+
+/* This is the main width and spacing container for the hub. */
+.updates-page {
+
+    /* Keep the page compact and consistent at every screen width. */
+    max-width: 600px;
+
+    /* Center the page in the browser window. */
+    margin: 0 auto;
+
+    /* Add horizontal breathing room and space above the footer. */
+    padding: 0 12px 40px;
+
+}
+
+
+/* This area introduces the purpose of the page before the links begin. */
+.updates-intro {
+
+    /* Center the title and the short description. */
+    text-align: center;
+
+    /* Use compact spacing everywhere so the list begins promptly. */
+    padding: 8px 10px 28px;
+
+}
+
+
+/* This is the main title visitors see on the updates page. */
+.updates-intro h1 {
+
+    /* Keep the title prominent while respecting narrow and wide screens. */
+    font-size: clamp(2rem, 9vw, 2.7rem);
+
+    /* Remove the browser's default heading margin. */
+    margin: 0;
+
+    /* Match the established blue heading color. */
+    color: var(--about-blue);
+
+}
+
+
+/* This gold line gives the title the same accent used on the About page. */
+.updates-intro h1::after {
+
+    /* Create a small decorative block below the heading. */
+    content: "";
+    display: block;
+
+    /* Give the accent its simple, stable dimensions. */
+    width: 55px;
+    height: 3px;
+
+    /* Use the existing site gold color. */
+    background: var(--about-gold);
+
+    /* Keep the accent close to the heading at every screen width. */
+    margin: 10px auto 0;
+    border-radius: 10px;
+
+}
+
+
+/* This sentence gives visitors context without competing with the links. */
+.updates-intro p {
+
+    /* Limit the line length for comfortable reading. */
+    max-width: 620px;
+
+    /* Center the sentence below the title. */
+    margin: 24px auto 0;
+
+    /* Use a relaxed size and line height. */
+    color: var(--about-muted-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+}
+
+
+/* This section groups the list heading and its links. */
+.updates-section {
+
+    /* Separate the list from the introduction above it. */
+    margin-top: 10px;
+
+}
+
+
+/* This heading tells visitors what the collection contains. */
+.updates-section h2 {
+
+    /* Keep this heading smaller than the main page title. */
+    margin: 0 0 22px;
+    color: var(--about-blue);
+    font-size: 1.55rem;
+
+}
+
+
+/* This ordered list creates the responsive layout for all updates. */
+.updates-list {
+
+    /* Use one column at every width so each update has its own row. */
+    display: grid;
+    grid-template-columns: 1fr;
+
+    /* Keep the compact gap used by the mobile layout. */
+    gap: 12px;
+
+    /* Remove default numbering and indentation because the date is visible. */
+    list-style: none;
+    margin: 0;
+    padding-left: 0px;
+    padding-right: 40px;
+
+}
+
+
+/* This item is a simple layout wrapper around one update link. */
+.update-item {
+
+    /* Allow the grid item to shrink without causing page overflow. */
+    min-width: 0;
+
+}
+
+
+/* The whole card is an anchor, making it easy to click or tap. */
+.update-link {
+
+    /* Place both pieces of text together on one horizontal line. */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    /* Keep each file-list button at or below 600 pixels wide. */
+    width: 100%;
+    max-width: 900px;
+
+    /* Make the button feel like a compact file-list row. */
+    min-height: 0;
+    padding: 14px 16px;
+
+    /* Use a white card against the site's light background. */
+    background: var(--about-white);
+    border: 1px solid var(--about-border);
+    border-radius: 10px;
+
+    /* Remove the default underline and use the normal text color. */
+    color: var(--about-text);
+    text-decoration: none;
+
+    /* Animate only the small visual changes used for feedback. */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+}
+
+
+/* This is the clearly visible name of each update. */
+.update-link-text {
+
+    /* Keep the update name on one line and let it shorten if necessary. */
+    min-width: 0;
+    overflow: hidden;
+    color: var(--about-blue);
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+
+/* This small cue explains that the card opens the full update. */
+.update-link-action {
+
+    /* Keep the action secondary and always visible on the same line. */
+    flex-shrink: 0;
+    color: var(--about-blue-light);
+    font-size: 0.95rem;
+    font-weight: 400;
+    white-space: nowrap;
+
+}
+
+
+/* Lift and highlight a card when the pointer is over it. */
+.update-link:hover {
+
+    /* Show that the entire card is interactive without resizing it. */
+    border-color: var(--about-blue-light);
+    box-shadow: 0 8px 18px rgba(31, 79, 122, 0.12);
+    transform: translateY(-2px);
+
+}
+
+
+/* Make keyboard focus clearly visible for keyboard users. */
+.update-link:focus-visible {
+
+    /* Use the gold accent for a strong focus outline. */
+    outline: 3px solid var(--about-gold);
+    outline-offset: 3px;
+
+}
+
+
+/* Reinforce the active state in the small action cue. */
+.update-link:hover .update-link-action,
+.update-link:focus-visible .update-link-action {
+
+    /* Change the cue to the darker brand blue. */
+    color: var(--about-blue);
+
+}
+
+
+/* Stack the cards and reduce spacing on narrow phone screens. */
+@media (max-width: 600px) {
+
+    /* Match the existing mobile page padding. */
+    .updates-page {
+
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 40px;
+
+    }
+
+
+    /* Make the introduction more compact on a phone. */
+    .updates-intro {
+
+        padding: 8px 10px 28px;
+
+    }
+
+
+    /* Keep the title prominent while respecting the narrow viewport. */
+    .updates-intro h1 {
+
+        font-size: clamp(2rem, 9vw, 2.7rem);
+
+    }
+
+
+    /* Bring the title accent closer to the smaller heading. */
+    .updates-intro h1::after {
+
+        margin-top: 10px;
+
+    }
+
+
+    /* Use one column so every card has enough width for its label. */
+    .updates-list {
+
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+    }
+
+
+    /* Reduce padding slightly while preserving a large tap target. */
+    .update-link {
+
+        /* Keep mobile buttons thin while preserving comfortable tap space. */
+        padding: 14px 16px;
+
+    }
+
+}
