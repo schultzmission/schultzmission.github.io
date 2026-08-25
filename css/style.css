@@ -975,6 +975,68 @@ home page. These styles are specifically for the new pages.
 }
 
 
+.story-gallery {
+    width: 100%;
+}
+
+.gallery-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #f3f3f3;
+    box-shadow: 0 10px 25px rgba(31, 41, 55, 0.08);
+}
+
+.gallery-frame .about-image {
+    width: 100%;
+    display: block;
+    height: 360px;
+    object-fit: cover;
+    object-position: center 25%;
+    opacity: 1;
+    transition: opacity .2s ease;
+    z-index: 1;
+}
+
+.gallery-btn {
+    position: absolute;
+    bottom: 12px;
+    z-index: 2;
+    border: 0;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--about-blue);
+    width: 36px;
+    height: 36px;
+    border-radius: 30%;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-btn svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.gallery-btn:hover,
+.gallery-btn:focus-visible {
+    background: rgba(248, 244, 234, 0.8);
+    outline: none;
+}
+
+.prev-btn {
+    left: 12px;
+}
+
+.next-btn {
+    right: 12px;
+}
+
+
 /* ==========================================================
    WHO WE ARE IMAGE
    ========================================================== */
@@ -1696,6 +1758,14 @@ footer {
         gap: 30px;
 
     }
+    .story-gallery {
+        width: min(100%, 520px);
+        margin: 0 auto;
+    }
+
+    .gallery-frame {
+        width: 100%;
+    }
 
 
     /* Reduce image height slightly */
@@ -1862,6 +1932,31 @@ footer {
 
         margin: 10px auto 0;
 
+    }
+
+    .gallery-btn {
+        position: absolute;
+        top: auto;
+        bottom: 6px;
+        transform: none;
+
+        border-radius: 25%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    
+    }
+
+    .prev-btn{
+        left: 6px;
+    }
+
+    .next-btn{
+        right: 6px;
+    }
+
+    .gallery-frame .about-image {
+        height: 280px;
     }
 
 

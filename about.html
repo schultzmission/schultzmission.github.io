@@ -182,13 +182,29 @@
 
         <section class="about-section who-we-are">
            
-            <div class="story-image">
-                <img
-                    class="about-image"
-                    src="images/aboutIMGs/home.PNG"
-                    alt="Ben and Brianna Schultz"
-                >
+            <div class="story-gallery" aria-label="Photo gallery">
+                <div class="gallery-frame">
+                    <button class="gallery-btn prev-btn" type="button" aria-label="Previous image">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14.5 5L8 12L14.5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <img
+                        id="story-image"
+                        class="about-image"
+                        src="images/aboutIMGs/home.PNG"
+                        alt="Ben and Brianna Schultz"
+                    >
+
+                    <button class="gallery-btn next-btn" type="button" aria-label="Next image">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M9.5 5L16 12L9.5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
+
             <div class="story-text">
                 <h2>Who We Are</h2>
 
@@ -524,11 +540,6 @@
                         </p>
 
                         <p>
-                            In 2026, we made that move and spent nine months serving 
-                            at Karanda Mission Hospital.
-                        </p>
-
-                        <p>
                             Our calling is not ultimately to engineering or even to 
                             Zimbabwe. It is to follow Christ wherever He leads us 
                             and to use the gifts He has given us for His purposes. 
@@ -544,7 +555,7 @@
                             We don’t know exactly where every step will lead, but we 
                             are grateful for the way God has led us this far. What 
                             began as a senior design project became a friendship 
-                            with a hospital, then a burden for a community, and 
+                            with a hospital, and 
                             ultimately a calling to serve Christ in Africa.
                         </p>
 
@@ -713,6 +724,57 @@
 
     </footer>
 
+    <script>
+        const storyImages = [
+            "images/aboutIMGs/bishop-home.JPG",
+            "images/aboutIMGs/bri-hut.JPG",
+            "images/aboutIMGs/in-filters.jpeg",
+            "images/aboutIMGs/kids.jpeg",
+            "images/aboutIMGs/listening.jpeg",
+            "images/aboutIMGs/measuring.JPG"
+        ];
+
+        const cycleMs = 600000;
+        let currentIndex = 0;
+        let rotationTimer = null;
+
+        const imageEl = document.getElementById("story-image");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+
+        function showCurrentImage() {
+            imageEl.style.opacity = "0";
+
+            setTimeout(() => {
+                imageEl.src = storyImages[currentIndex];
+                imageEl.alt = "Ben and Brianna Schultz photo " + (currentIndex + 1);
+                imageEl.style.opacity = "1";
+            }, 100);
+        }
+
+        function resetRotationTimer() {
+            clearInterval(rotationTimer);
+            rotationTimer = setInterval(() => {
+                currentIndex = (currentIndex + 1) % storyImages.length;
+                showCurrentImage();
+            }, cycleMs);
+        }
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + storyImages.length) % storyImages.length;
+            showCurrentImage();
+            resetRotationTimer();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % storyImages.length;
+            showCurrentImage();
+            resetRotationTimer();
+        });
+
+        showCurrentImage();
+        resetRotationTimer();
+    </script>
 
 </body>
 </html>
