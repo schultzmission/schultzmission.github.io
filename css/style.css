@@ -993,8 +993,6 @@ home page. These styles are specifically for the new pages.
     height: 360px;
     object-fit: cover;
     object-position: center 25%;
-    opacity: 1;
-    transition: opacity .2s ease;
     z-index: 1;
 }
 
@@ -1010,7 +1008,6 @@ home page. These styles are specifically for the new pages.
     border-radius: 30%;
     cursor: pointer;
     padding: 0;
-    transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
     display: flex;
     align-items: center;
     justify-content: center;

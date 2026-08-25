@@ -711,13 +711,8 @@
         const nextBtn = document.querySelector(".next-btn");
 
         function showCurrentImage() {
-            imageEl.style.opacity = "0";
-
-            setTimeout(() => {
-                imageEl.src = storyImages[currentIndex];
-                imageEl.alt = "Ben and Brianna Schultz photo " + (currentIndex + 1);
-                imageEl.style.opacity = "1";
-            }, 100);
+            imageEl.src = storyImages[currentIndex];
+            imageEl.alt = "Ben and Brianna Schultz photo " + (currentIndex + 1);
         }
 
         function resetRotationTimer() {
