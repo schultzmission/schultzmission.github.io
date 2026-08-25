@@ -21,6 +21,11 @@ body {
 :root {
     --primary-brand-color: #1d4f7a;
     --primary-brand-color-transparent: rgba(29, 79, 122, 0.85);
+    --accent-gold: #c99a3d;
+    --light-blue: #eef5fb;
+    --light-gray-background: #f7f7f7;
+    --accent-green: #5f8f72;
+    --light-green: #edf5ef;
     --social-icon-color: var(--primary-brand-color);
     --social-button-width: 200px;
 }
@@ -526,7 +531,7 @@ footer {
 }
 
 
-/* ==========================================================
+/* ======================================================================================================================
 ABOUT PAGE
 These styles are used by about.html.
 
@@ -535,120 +540,127 @@ home page. These styles are specifically for the new pages.
 ========================================================== */
 
 
+
 /* ==========================================================
-SITE HEADER
-This is the navigation bar that appears at the top of the
-About page and eventually the Updates page as well.
-========================================================== */
+   COLOR VARIABLES
+   ==========================================================
+
+   These are only used by the About page.
+
+   If you want to experiment with colors later, this is a
+   convenient place to change them.
+   ========================================================== */
+
+:root {
+
+    /* Main Schultz Mission blue */
+    --about-blue: #1d4f7a;
+
+    /* Slightly lighter blue for hover effects */
+    --about-blue-light: #286696;
+
+    /* Very light blue background */
+    --about-light-blue: #eef5fb;
+
+    /* Muted green accent */
+    --about-green: #5f8f72;
+
+    /* Very light green background */
+    --about-light-green: #edf5ef;
+
+    /* Small gold accent */
+    --about-gold: #c99a3d;
+
+    /* Main page background */
+    --about-background: #f7f7f7;
+
+    /* White content background */
+    --about-white: #ffffff;
+
+    /* Main text color */
+    --about-text: #333333;
+
+    /* Slightly softer text */
+    --about-muted-text: #666666;
+
+    /* Light border color */
+    --about-border: #dfe5e9;
+}
+
+
+/* ==========================================================
+   STICKY WEBSITE HEADER
+   ==========================================================
+
+   This header stays visible while the visitor scrolls.
+
+   This is especially useful on a long About page because
+   visitors can always get back to Home / Updates / Give.
+   ========================================================== */
 
 .site-header {
 
-    /* ------------------------------------------------------
-    Keep the header visible while scrolling.
-
-    "sticky" means the header behaves normally until the
-    visitor scrolls, then it stays at the top of the screen.
-    ------------------------------------------------------ */
+    /* Keep the navigation visible during scrolling */
     position: sticky;
 
-    /* Stick to the very top of the browser window */
+    /* Stick to the very top of the browser */
     top: 0;
 
-    /* Make sure the header stays above the page content */
+    /* Keep the navigation above everything else */
     z-index: 1000;
 
-    /* White background so text remains easy to read */
-    background: #ffffff;
+    /* White background */
+    background: rgba(255, 255, 255, 0.96);
 
-    /* Bottom border gives the header some separation */
-    border-bottom: 1px solid #d2d8e0;
+    /* Slight blur behind the header on supported browsers */
+    backdrop-filter: blur(8px);
 
-    /* Small shadow underneath the header */
-    box-shadow: 0 2px 10px rgba(31, 41, 55, 0.08);
+    /* Subtle line underneath */
+    border-bottom: 1px solid var(--about-border);
+
+    /* Small shadow */
+    box-shadow: 0 2px 12px rgba(31, 41, 55, 0.08);
 
     /* Internal spacing */
-    padding: 12px 10px;
-
+    padding: 10px;
 }
 
 
 /* ==========================================================
-SITE TITLE
-"Ben & Brianna Schultz" inside the navigation header.
-========================================================== */
-
-.site-title {
-
-    /* Center the name */
-    text-align: center;
-
-    /* Space below the name before navigation links */
-    margin-bottom: 8px;
-
-}
-
-
-/* The link containing the website name */
-
-.site-title a {
-
-    /* Remove the normal hyperlink underline */
-    text-decoration: none;
-
-    /* Use our primary blue */
-    color: var(--primary-brand-color);
-
-    /* Make the name stand out */
-    font-weight: 700;
-
-    /* Slightly larger than normal text */
-    font-size: 1.15rem;
-
-}
-
-
-/* ==========================================================
-SITE NAVIGATION
-Contains:
-
-Home
-About Us
-Updates
-Give
-========================================================== */
+   WEBSITE NAVIGATION
+   ========================================================== */
 
 .site-nav {
 
-    /* Flexbox puts the navigation links in a row */
+    /* Put navigation links in a row */
     display: flex;
 
-    /* Center the navigation horizontally */
+    /* Center the navigation */
     justify-content: center;
 
-    /* Allow links to wrap onto another line on small screens */
+    /* Allow links to wrap on smaller screens */
     flex-wrap: wrap;
 
     /* Space between links */
-    gap: 8px;
+    gap: 6px;
 
 }
 
 
 /* ==========================================================
-NORMAL NAVIGATION LINKS
-Home / About Us / Updates
-========================================================== */
+   NORMAL NAVIGATION LINKS
+   ========================================================== */
 
 .site-nav a {
 
     /* Remove underline */
     text-decoration: none;
 
-    /* Use our normal text color */
-    color: #333;
+    /* Normal text color */
+    color: var(--about-text);
 
-    /* Give each link some clickable area */
-    padding: 7px 10px;
+    /* Increase clickable area */
+    padding: 8px 13px;
 
     /* Rounded corners */
     border-radius: 8px;
@@ -657,208 +669,217 @@ Home / About Us / Updates
     font-weight: 600;
 
     /* Smooth hover animation */
-    transition: background .2s ease,
-                color .2s ease;
-
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 
-/* Hover effect for normal navigation links */
+/* ==========================================================
+   NAVIGATION HOVER
+   ========================================================== */
 
 .site-nav a:hover {
 
-    /* Very light blue background */
-    background: #eef5fb;
+    /* Light blue background */
+    background: var(--about-light-blue);
 
     /* Brand blue text */
-    color: var(--primary-brand-color);
+    color: var(--about-blue);
 
 }
 
 
 /* ==========================================================
-GIVE BUTTON IN THE NAVIGATION
-This is intentionally different from the other links
-because giving is one of the primary purposes of the site.
-========================================================== */
+   CURRENT PAGE
 
-.site-nav .nav-give {
+   The About Us link gets the "active" class in about.html.
 
-    /* Blue background */
-    background: var(--primary-brand-color-transparent);
+   This makes it visually obvious which page the visitor is
+   currently reading.
+   ========================================================== */
 
-    /* White text */
-    color: #ffffff;
+.site-nav .active {
 
+    background: var(--about-light-blue);
 
-}
+    color: var(--about-blue);
 
-
-/* Give button hover */
-
-.site-nav .nav-give:hover {
-
-    /* Same darker blue used by your existing buttons */
-    background: #286696;
-
-    /* Keep text white */
-    color: #ffffff;
+    font-weight: 700;
 
 }
 
 
 /* ==========================================================
-ABOUT PAGE CONTAINER
-Controls the overall width of the About page.
+   ABOUT PAGE CONTAINER
+   ==========================================================
 
-This follows the same 900px maximum width you already use
-on your home page.
-========================================================== */
+   This controls the overall width of the About page.
+
+   The page is intentionally narrower than a typical full-width
+   website because long paragraphs become difficult to read when
+   they stretch too far across a desktop screen.
+   ========================================================== */
 
 .about-page {
 
-    /* Prevent text from becoming extremely wide */
-    max-width: 900px;
+    /* Maximum width of the entire page */
+    max-width: 1000px;
 
     /* Center the page */
     margin: 0 auto;
 
-    /* Space around the content */
-    padding: 30px 10px;
+    /* Horizontal breathing room */
+    padding: 0 20px 60px;
 
 }
 
 
 /* ==========================================================
-ABOUT PAGE INTRODUCTION
-The opening section at the top of the page.
-========================================================== */
+   ABOUT PAGE INTRODUCTION
+   ==========================================================
+
+   This is the large title at the beginning of the page.
+
+   Unlike the other sections, this is NOT a card.
+   We want it to feel like the beginning of a story.
+   ========================================================== */
 
 .about-intro {
 
-    /* Center the introduction */
+    /* Center the heading */
     text-align: center;
 
-    /* Space below the introduction */
-    margin-bottom: 35px;
+    /* Space above and below */
+    padding: 55px 20px 45px;
 
 }
 
 
-/* Main "About Us" heading */
+/* ==========================================================
+   ABOUT PAGE MAIN TITLE
+   ========================================================== */
 
 .about-intro h1 {
 
-    /* Use your existing responsive heading size */
-    font-size: clamp(2rem, 7vw, 3rem);
+    /* Large responsive heading */
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
 
-    /* Use your brand color */
-    color: var(--primary-brand-color);
+    /* Remove default margin */
+    margin: 0;
 
-    /* Remove excessive browser spacing */
-    margin: 0 0 10px;
+    /* Brand blue */
+    color: var(--about-blue);
 
-}
-
-
-/* Introductory paragraph */
-
-.about-intro p {
-
-    /* Prevent very wide lines */
-    max-width: 700px;
-
-    /* Center the paragraph */
-    margin: 0 auto;
-
-    /* Comfortable reading spacing */
-    line-height: 1.7;
-
-    /* Slightly larger than normal text */
-    font-size: 1.05rem;
-
-    /* Softer gray */
-    color: #555;
+    /* Slightly tighter letter spacing */
+    letter-spacing: -0.02em;
 
 }
 
 
 /* ==========================================================
-INDIVIDUAL ABOUT SECTIONS
+   SMALL GOLD ACCENT UNDER THE MAIN TITLE
+   ==========================================================
 
-Each major section of the About page gets this class.
+   This creates a decorative line without requiring another
+   HTML element.
 
-Examples:
+   The "after" pseudo-element is generated automatically by CSS.
+   ========================================================== */
 
-Who We Are
-Our Calling
-Our Mission
-Karanda Mission Hospital
-Engineering & Ministry
-Meet Us
-========================================================== */
+.about-intro h1::after {
+
+    content: "";
+
+    /* Make it a small block */
+    display: block;
+
+    /* Width of the gold line */
+    width: 55px;
+
+    /* Height of the line */
+    height: 3px;
+
+    /* Gold accent */
+    background: var(--about-gold);
+
+    /* Center the line */
+    margin: 18px auto 0;
+
+    /* Slightly rounded ends */
+    border-radius: 10px;
+
+}
+
+
+/* ==========================================================
+   GENERAL ABOUT SECTION
+   ==========================================================
+
+   IMPORTANT:
+
+   We are deliberately NOT making every section a white card.
+
+   Instead, sections are allowed to breathe naturally on the
+   page. Individual sections will receive their own visual
+   treatment when appropriate.
+   ========================================================== */
 
 .about-section {
 
-    /* White card background */
-    background: #ffffff;
-
-    /* Space inside each section */
-    padding: 25px;
-
-    /* Rounded corners */
-    border-radius: 15px;
-
-    /* Space between sections */
-    margin-bottom: 25px;
-
-    /* Very subtle border */
-    border: 1px solid #e1e5e9;
-
-    /* Very subtle shadow */
-    box-shadow: 0 8px 20px rgba(31, 41, 55, 0.04);
+    /* Space between major sections */
+    margin-bottom: 55px;
 
 }
 
 
 /* ==========================================================
-SECTION HEADINGS
-========================================================== */
+   GENERAL SECTION HEADINGS
+   ========================================================== */
 
 .about-section h2 {
 
     /* Brand blue */
-    color: var(--primary-brand-color);
+    color: var(--about-blue);
 
-    /* Slightly smaller than the main page heading */
-    font-size: 1.5rem;
+    /* Responsive heading */
+    font-size: clamp(1.6rem, 4vw, 2rem);
 
-    /* Space below heading */
+    /* Remove default top spacing */
     margin-top: 0;
 
-    /* Space below before paragraph */
-    margin-bottom: 15px;
+    /* Space below heading */
+    margin-bottom: 22px;
+
+    /* Slightly tighter lettering */
+    letter-spacing: -0.01em;
 
 }
 
 
 /* ==========================================================
-ABOUT PAGE PARAGRAPHS
-========================================================== */
+   GENERAL ABOUT PAGE PARAGRAPHS
+   ========================================================== */
 
 .about-section p {
 
-    /* Comfortable line spacing */
-    line-height: 1.7;
+    /* Comfortable reading line height */
+    line-height: 1.8;
+
+    /* Slightly larger than normal body text */
+    font-size: 1.02rem;
 
     /* Space between paragraphs */
-    margin: 0 0 15px;
+    margin: 0 0 18px;
+
+    /* Main text color */
+    color: var(--about-text);
 
 }
 
 
-/* Remove bottom margin from the final paragraph
-inside a section */
+/* Remove bottom margin from the final paragraph */
 
 .about-section p:last-child {
 
@@ -868,154 +889,23 @@ inside a section */
 
 
 /* ==========================================================
-ABOUT PAGE IMAGE
-========================================================== */
-
-.about-image {
-
-    /* Responsive width */
-
-    width: 100%;
-
-    /* Don't allow the image to become enormous */
-
-    max-width: 600px;
-
-    /* Keep the image centered */
-
-    display: block;
-
-    margin: 0 auto 20px;
-
-    /* Rounded corners to match your existing design */
-
-    border-radius: 15px;
-
-}
-
-
-/* ==========================================================
-MISSION STATEMENT
-
-This gives the actual mission statement a little more
-visual importance than an ordinary paragraph.
-========================================================== */
-
-.mission-statement {
-
-    /* Light blue background */
-
-    background: #eef5fb;
-
-    /* Blue line on the left */
-
-    border-left: 4px solid var(--primary-brand-color);
-
-    /* Space inside the highlighted area */
-
-    padding: 15px 18px;
-
-    /* Rounded right corners */
-
-    border-radius: 0 10px 10px 0;
-
-    /* Slightly emphasized text */
-
-    font-weight: 600;
-
-}
-
-
-/* ==========================================================
-ABOUT PAGE BUTTONS
-
-These are used for things like:
-
-Read Our Updates
-Give to Our Ministry
-
-They intentionally resemble your existing buttons.
-========================================================== */
-
-.about-button {
-
-    /* Make it look like a button */
-
-    display: inline-block;
-
-    /* Blue background */
-
-    background: var(--primary-brand-color);
-
-    /* White text */
-
-    color: #ffffff;
-
-    /* Remove underline */
-
-    text-decoration: none;
-
-    /* Internal spacing */
-
-    padding: 12px 18px;
-
-    /* Rounded corners */
-
-    border-radius: 10px;
-
-    /* Semi-bold */
-
-    font-weight: 600;
-
-    /* Smooth hover */
-
-    transition: background .2s ease,
-                transform .2s ease;
-
-}
-
-
-/* Hover effect */
-
-.about-button:hover {
-
-    /* Darker blue */
-
-    background: #286696;
-
-    /* Move upward slightly */
-
-    transform: translateY(-1px);
-
-}
-
-
-/* ==========================================================
-LINKS INSIDE NORMAL ABOUT PAGE TEXT
-
-This controls links such as:
-
-www.karanda.org
-========================================================== */
+   NORMAL LINKS INSIDE ABOUT PAGE TEXT
+   ========================================================== */
 
 .about-section a:not(.about-button) {
 
-    /* Use brand blue */
+    /* Brand blue */
+    color: var(--about-blue);
 
-    color: var(--primary-brand-color);
-
-    /* Make the link noticeable */
-
+    /* Make links easy to notice */
     font-weight: 600;
 
 }
 
 
-/* Hover effect for normal text links */
+/* Underline links when hovered */
 
 .about-section a:not(.about-button):hover {
-
-    /* Underline when the mouse is over the link */
 
     text-decoration: underline;
 
@@ -1023,44 +913,1155 @@ www.karanda.org
 
 
 /* ==========================================================
-MOBILE ADJUSTMENTS
+   WHO WE ARE
+   ==========================================================
 
-Most of your existing CSS is already responsive.
+   Desktop layout:
 
-This section simply makes the About cards a little more
-comfortable on smaller screens.
-========================================================== */
+       IMAGE | TEXT
 
-@media (max-width: 600px) {
+   Mobile layout:
+
+       IMAGE
+       TEXT
+
+   CSS Grid handles the transition.
+   ========================================================== */
+
+.who-we-are {
+
+    /* Two-column layout */
+    display: grid;
+
+    /* Image takes slightly less space than text */
+    grid-template-columns: 0.9fr 1.1fr;
+
+    /* Space between image and text */
+    gap: 45px;
+
+    /* Vertically center the two sides */
+    align-items: center;
+
+    /* White background */
+    background: var(--about-white);
+
+    /* Internal spacing */
+    padding: 35px;
+
+    /* Rounded corners */
+    border-radius: 18px;
+
+    /* Very subtle border */
+    border: 1px solid var(--about-border);
+
+    /* Very subtle shadow */
+    box-shadow: 0 8px 25px rgba(31, 41, 55, 0.05);
+
+}
 
 
-    /* Reduce the amount of padding inside the cards */
+/* ==========================================================
+   WHO WE ARE IMAGE CONTAINER
+   ========================================================== */
 
-    .about-section {
+.story-image {
 
-        padding: 20px;
+    /* Prevent image from overflowing */
+    overflow: hidden;
+
+    /* Rounded corners */
+    border-radius: 15px;
+
+}
+
+
+/* ==========================================================
+   WHO WE ARE IMAGE
+   ========================================================== */
+
+.story-image .about-image {
+
+    /* Fill the available width */
+    width: 100%;
+
+    /* Make image responsive */
+    display: block;
+
+    /* Give desktop image a consistent height */
+    height: 360px;
+
+    /* Crop image rather than stretch it */
+    object-fit: cover;
+
+    /* Focus slightly toward the top */
+    object-position: center 25%;
+
+}
+
+
+/* ==========================================================
+   WHO WE ARE TEXT
+   ========================================================== */
+
+.story-text h2 {
+
+    /* Remove unnecessary top spacing */
+    margin-top: 0;
+
+}
+
+
+/* ==========================================================
+   MISSION SECTION
+   ==========================================================
+
+   The mission is important enough that it gets its own visual
+   treatment.
+
+   Light green background ties into the ministry / Africa /
+   service theme without overpowering the blue branding.
+   ========================================================== */
+
+.mission-section {
+
+    /* Light green background */
+    background: var(--about-light-green);
+
+    /* Internal spacing */
+    padding: 40px;
+
+    /* Rounded corners */
+    border-radius: 18px;
+
+    /* Small green accent border */
+    border-left: 5px solid var(--about-green);
+
+}
+
+
+/* Mission heading */
+
+.mission-section h2 {
+
+    /* Green heading */
+    color: var(--about-green);
+
+}
+
+
+/* ==========================================================
+   MISSION STATEMENT
+   ==========================================================
+
+   This is the most important text inside the Mission section.
+
+   It gets larger type and more visual emphasis.
+   ========================================================== */
+
+.mission-statement {
+
+    /* Remove normal paragraph appearance */
+    background: #ffffff;
+
+    /* Internal spacing */
+    padding: 25px 28px;
+
+    /* Rounded corners */
+    border-radius: 12px;
+
+    /* Green line on the left */
+    border-left: 4px solid var(--about-green);
+
+    /* Slightly larger text */
+    font-size: 1.12rem !important;
+
+    /* Slightly stronger text */
+    font-weight: 600;
+
+    /* Comfortable line height */
+    line-height: 1.8 !important;
+
+    /* Subtle shadow */
+    box-shadow: 0 5px 18px rgba(31, 41, 55, 0.05);
+
+}
+
+
+/* ==========================================================
+   OUR CALLING
+   ==========================================================
+
+   The Calling section itself is intentionally simple.
+
+   The interesting layout happens inside .calling-stories.
+   ========================================================== */
+
+.calling-section {
+
+    /* Normal section spacing */
+    padding-top: 5px;
+
+}
+
+
+/* ==========================================================
+   CALLING STORIES GRID
+   ==========================================================
+
+   Desktop:
+
+       Brianna | Ben
+
+   Together will span the full width underneath.
+
+   We use CSS Grid so the layout can automatically collapse
+   on smaller screens.
+   ========================================================== */
+
+.calling-stories {
+
+    /* Turn on CSS Grid */
+    display: grid;
+
+    /* Two equal columns */
+    grid-template-columns: repeat(2, 1fr);
+
+    /* Space between stories */
+    gap: 25px;
+
+}
+
+
+/* ==========================================================
+   COLLAPSIBLE CALLING STORIES
+   ==========================================================
+
+   Brianna, Ben, and Together use the native HTML <details>
+   element.
+
+   This means:
+
+       Closed:
+       [ Brianna
+         short teaser
+         Read Brianna's story      > ]
+
+       Open:
+       [ Brianna
+         short teaser
+         Read Brianna's story      v
+
+         full story...
+         full story...
+         full story...
+       ]
+
+   No JavaScript is required.
+   ========================================================== */
+
+
+/* ==========================================================
+   PERSON STORY CONTAINER
+   ========================================================== */
+
+.person-story {
+
+    /* Remove browser's default details styling */
+    background: var(--about-white);
+
+    /* Internal spacing */
+    padding: 0;
+
+    /* Rounded corners */
+    border-radius: 16px;
+
+    /* Light border */
+    border: 1px solid var(--about-border);
+
+    /* Subtle shadow */
+    box-shadow: 0 6px 20px rgba(31, 41, 55, 0.04);
+
+    /* Prevent content from overflowing */
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   STORY SUMMARY
+   ==========================================================
+
+   The summary is the part visitors click.
+
+   The cursor change helps communicate that it is clickable.
+   ========================================================== */
+
+.person-story summary {
+
+    /* Make the entire summary clickable */
+    cursor: pointer;
+
+    /* Internal spacing */
+    padding: 28px 30px;
+
+    /* Remove browser outline appearance */
+    list-style: none;
+
+}
+
+
+/* Remove the default triangle supplied by some browsers */
+
+.person-story summary::-webkit-details-marker {
+
+    display: none;
+
+}
+
+
+/* ==========================================================
+   PERSON NAME
+   ========================================================== */
+
+.person-story summary h3 {
+
+    /* Brand blue */
+    color: var(--about-blue);
+
+    /* Responsive heading */
+    font-size: 1.45rem;
+
+    /* Remove default margins */
+    margin: 0 0 12px;
+
+}
+
+
+/* ==========================================================
+   STORY TEASER
+   ==========================================================
+
+   This is the small preview of the story.
+
+   It gives visitors a reason to expand the section.
+   ========================================================== */
+
+.story-teaser {
+
+    /* Normal text color */
+    color: var(--about-muted-text);
+
+    /* Comfortable line height */
+    line-height: 1.65;
+
+    /* Slightly smaller than full story */
+    font-size: 0.98rem;
+
+    /* Space above the read-more text */
+    margin: 0 0 16px;
+
+}
+
+
+/* ==========================================================
+   READ MORE INDICATOR
+   ========================================================== */
+
+.read-more {
+
+    /* Make it appear on its own line */
+    display: block;
+
+    /* Brand blue */
+    color: var(--about-blue);
+
+    /* Slightly bold */
+    font-weight: 700;
+
+    /* Small size */
+    font-size: 0.9rem;
+
+}
+
+
+/* Add an arrow after the text */
+
+.read-more::after {
+
+    content: " ↓";
+
+    /* Small gold accent */
+    color: var(--about-gold);
+
+}
+
+
+/* ==========================================================
+   OPEN STORY
+   ==========================================================
+
+   When the <details> element is open, we can slightly change
+   the visual treatment.
+   ========================================================== */
+
+.person-story[open] summary {
+
+    /* Light blue background */
+    background: var(--about-light-blue);
+
+}
+
+
+/* Change the arrow when the story is open */
+
+.person-story[open] .read-more::after {
+
+    content: " ↑";
+
+}
+
+
+/* ==========================================================
+   FULL STORY CONTENT
+   ========================================================== */
+
+.story-content {
+
+    /* Space around the actual story */
+    padding: 25px 30px 30px;
+
+    /* Thin divider between teaser and full story */
+    border-top: 1px solid var(--about-border);
+
+}
+
+
+/* Normal paragraphs inside the expanded story */
+
+.story-content p {
+
+    /* Comfortable reading line height */
+    line-height: 1.8;
+
+    /* Normal text size */
+    font-size: 1.02rem;
+
+    /* Space between paragraphs */
+    margin: 0 0 18px;
+
+}
+
+
+/* Remove margin from final paragraph */
+
+.story-content p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* ==========================================================
+   TOGETHER STORY
+
+   The third .person-story is the "Together" story.
+
+   It spans both columns on desktop.
+   ========================================================== */
+
+.person-story:nth-child(3) {
+
+    /* Span the full width of the grid */
+    grid-column: 1 / -1;
+
+    /* Slightly different background */
+    background: var(--about-light-blue);
+
+    /* Blue accent */
+    border-top: 4px solid var(--about-blue);
+
+}
+
+
+/* ==========================================================
+   TOGETHER HEADING
+   ========================================================== */
+
+.person-story:nth-child(3) h3 {
+
+    /* Blue heading */
+    color: var(--about-blue);
+
+}
+
+
+/* ==========================================================
+   KARANDA SECTION
+   ==========================================================
+
+   Desktop:
+
+       IMAGE | TEXT
+
+   Mobile:
+
+       IMAGE
+       TEXT
+
+   This intentionally resembles Who We Are but is slightly
+   different so the page does not feel repetitive.
+   ========================================================== */
+
+.karanda-section {
+
+    /* Two-column layout */
+    display: grid;
+
+    /* Equal columns */
+    grid-template-columns: 1fr 1fr;
+
+    /* Space between columns */
+    gap: 40px;
+
+    /* Vertically center */
+    align-items: center;
+
+    /* White background */
+    background: var(--about-white);
+
+    /* Internal spacing */
+    padding: 35px;
+
+    /* Rounded corners */
+    border-radius: 18px;
+
+    /* Border */
+    border: 1px solid var(--about-border);
+
+    /* Shadow */
+    box-shadow: 0 8px 25px rgba(31, 41, 55, 0.05);
+
+}
+
+
+/* ==========================================================
+   KARANDA IMAGE
+   ========================================================== */
+
+.karanda-image {
+    min-height: 330px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.karanda-image img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ==========================================================
+   KARANDA HEADING
+   ========================================================== */
+
+.karanda-text h2 {
+
+    /* Slightly smaller because the heading is long */
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+
+}
+
+
+/* ==========================================================
+   ENGINEERING SECTION
+   ==========================================================
+
+   Notice that this is intentionally the OPPOSITE direction
+   from Karanda.
+
+   Desktop:
+
+       TEXT | IMAGE
+
+   This gives the page visual movement as the visitor scrolls.
+   ========================================================== */
+
+.engineering-section {
+
+    /* Two columns */
+    display: grid;
+
+    /* Equal width */
+    grid-template-columns: 1fr 1fr;
+
+    /* Space between sides */
+    gap: 40px;
+
+    /* Vertically center */
+    align-items: center;
+
+    /* Light green background */
+    background: var(--about-light-green);
+
+    /* Internal spacing */
+    padding: 40px;
+
+    /* Rounded corners */
+    border-radius: 18px;
+
+    /* Green accent */
+    border-top: 4px solid var(--about-green);
+
+}
+
+
+/* ==========================================================
+   ENGINEERING IMAGE
+   ========================================================== */
+
+.engineering-image {
+
+    /* Give the future image a defined area */
+    min-height: 350px;
+
+    /* Rounded corners */
+    border-radius: 15px;
+
+    /* Hide overflow */
+    overflow: hidden;
+
+    /* Vertically align the image to the top of the container */
+    align-self: start;
+
+    margin-top: 70px;
+
+}
+
+.engineering-image img {
+
+    /* Fill container */
+    width: 100%;
+
+    height: 350px;
+
+    /* Crop instead of stretching */
+    object-fit: cover;
+
+    /* Remove inline-image spacing */
+    display: block;
+
+}
+
+
+/* ==========================================================
+   ABOUT PAGE BUTTONS
+   ==========================================================
+
+   These are still available if we decide to use buttons at
+   the bottom of the page later.
+   ========================================================== */
+
+.about-button {
+
+    /* Make link behave like a button */
+    display: inline-block;
+
+    /* Brand blue */
+    background: var(--about-blue);
+
+    /* White text */
+    color: #ffffff;
+
+    /* Remove underline */
+    text-decoration: none;
+
+    /* Internal spacing */
+    padding: 12px 18px;
+
+    /* Rounded corners */
+    border-radius: 10px;
+
+    /* Bold enough to look like a button */
+    font-weight: 600;
+
+    /* Smooth animation */
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+/* Button hover */
+
+.about-button:hover {
+
+    background: var(--about-blue-light);
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+footer {
+
+    /* Space above footer */
+    margin-top: 20px;
+
+    /* Internal spacing */
+    padding: 25px 10px;
+
+    /* Center text */
+    text-align: center;
+
+}
+
+
+/* ==========================================================
+   CONTACT INFORMATION
+   ========================================================== */
+
+.contact {
+
+    margin-top: 0;
+
+    font-size: 0.95rem;
+
+    color: var(--about-muted-text);
+
+}
+
+
+/* Contact email */
+
+.contact a {
+
+    color: var(--about-blue);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+
+/* Contact hover */
+
+.contact a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================================
+   TABLET / SMALL LAPTOP
+   ==========================================================
+
+   At this point the three Calling stories become a little
+   more cramped, so we give them more room.
+
+   The two personal stories remain side-by-side.
+   ========================================================== */
+
+@media (max-width: 800px) {
+
+
+    /* ------------------------------------------------------
+       WHO WE ARE
+       ------------------------------------------------------
+
+       Move from:
+
+           IMAGE | TEXT
+
+       toward:
+
+           IMAGE
+           TEXT
+
+       This gives the content more breathing room.
+       ------------------------------------------------------ */
+
+    .who-we-are {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
 
     }
 
 
-    /* Slightly reduce the header spacing */
+    /* Reduce image height slightly */
 
-    .site-header {
+    .story-image .about-image {
 
-        padding: 10px 6px;
+        height: 320px;
+
+    }
+
+    /* ==========================================================
+    MOBILE COLLAPSIBLE STORIES
+    ========================================================== */
+
+    .person-story summary {
+
+        /* Reduce horizontal padding on phones */
+        padding: 23px 22px;
 
     }
 
 
-    /* Make navigation links slightly smaller */
+    .story-content {
 
-    .site-nav a {
+        /* Reduce padding on phones */
+        padding: 22px;
 
-        padding: 6px 8px;
+    }
+
+
+    /* Make teaser slightly smaller on phones */
+
+    .story-teaser {
 
         font-size: 0.95rem;
 
     }
+    /* ------------------------------------------------------
+       KARANDA
+       ------------------------------------------------------ */
 
+    .karanda-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       ENGINEERING
+       ------------------------------------------------------ */
+
+    .engineering-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+    /* Give the engineering image slightly less height */
+
+    .engineering-image {
+
+        min-height: 300px;
+
+        order: -1; /* Move the image above the text on mobile */
+
+        margin-top: 0;
+
+    }
+
+
+    .engineering-image img {
+
+        height: 300px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ==========================================================
+
+   This is where the page becomes a comfortable single-column
+   reading experience.
+
+   Everything should stack naturally as the visitor scrolls.
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+    /* ------------------------------------------------------
+       PAGE CONTAINER
+       ------------------------------------------------------ */
+
+    .about-page {
+
+        /* Reduce horizontal padding */
+        padding-left: 12px;
+
+        padding-right: 12px;
+
+        /* Slightly less space at bottom */
+        padding-bottom: 40px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       STICKY HEADER
+       ------------------------------------------------------ */
+
+    .site-header {
+
+        /* Slightly smaller padding */
+        padding: 8px 5px;
+
+    }
+
+
+    /* Navigation links */
+
+    .site-nav {
+
+        gap: 3px;
+
+    }
+
+
+    .site-nav a {
+
+        padding: 7px 9px;
+
+        font-size: 0.9rem;
+
+    }
+
+
+    /* ------------------------------------------------------
+       PAGE TITLE
+       ------------------------------------------------------ */
+
+    .about-intro {
+
+        /* Reduce large desktop spacing */
+        padding: 8px 10px 10px;
+
+    }
+
+
+    .about-intro h1 {
+
+        font-size: clamp(2rem, 9vw, 2.7rem);
+
+    }
+
+    .about-intro h1::after {
+
+        margin: 10px auto 0;
+
+    }
+
+
+    /* ------------------------------------------------------
+       GENERAL SECTIONS
+       ------------------------------------------------------ */
+
+    .about-section {
+
+        margin-bottom: 40px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       WHO WE ARE
+       ------------------------------------------------------ */
+
+    .who-we-are {
+
+        /* Less internal padding */
+        padding: 22px;
+
+        /* Smaller gap */
+        gap: 24px;
+
+        /* Slightly smaller corners */
+        border-radius: 15px;
+
+    }
+
+
+    /* Who We Are image */
+
+    .story-image .about-image {
+
+        height: 260px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       GENERAL TEXT
+       ------------------------------------------------------ */
+
+    .about-section p {
+
+        font-size: 1rem;
+
+        line-height: 1.75;
+
+    }
+
+
+    /* ------------------------------------------------------
+       MISSION
+       ------------------------------------------------------ */
+
+    .mission-section {
+
+        padding: 25px 22px;
+
+        border-left-width: 0px;
+
+        border-radius: 15px;
+
+    }
+
+
+    /* Mission statement */
+
+    .mission-statement {
+
+        padding: 20px 10px;
+
+        font-size: 1.05rem !important;
+
+    }
+
+
+    /* ------------------------------------------------------
+       CALLING STORIES
+       ------------------------------------------------------
+
+       Everything becomes one column.
+
+       The visitor sees:
+
+           Brianna
+
+           Ben
+
+           Together
+
+       as they scroll.
+       ------------------------------------------------------ */
+
+    .calling-stories {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    /* Reset Together's desktop full-width behavior */
+
+    .person-story:nth-child(3) {
+
+        grid-column: auto;
+
+    }
+
+
+    /* Individual story cards */
+
+    .person-story {
+
+        padding: 0px;
+
+        border-radius: 14px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       KARANDA
+       ------------------------------------------------------ */
+
+    .karanda-section {
+
+        padding: 22px;
+
+        gap: 24px;
+
+        border-radius: 15px;
+
+    }
+
+
+    /* Karanda image */
+
+    .karanda-image {
+
+        min-height: 240px;
+
+    }
+
+
+    .karanda-image img {
+
+        height: 240px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       ENGINEERING
+       ------------------------------------------------------ */
+
+    .engineering-section {
+
+        padding: 25px 22px;
+
+        gap: 24px;
+
+        border-radius: 15px;
+
+    }
+
+
+    /* Engineering image */
+
+    .engineering-image {
+
+        min-height: 240px;
+
+        order: -1; /* Move the image above the text on mobile */
+
+        margin-top: 0;
+
+    }
+
+
+    .engineering-image img {
+
+        height: 240px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       FOOTER
+       ------------------------------------------------------ */
+
+    footer {
+
+        padding: 20px 10px;
+
+    }
 
 }
