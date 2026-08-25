@@ -2443,3 +2443,36 @@ footer {
     }
 
 }
+
+
+/* Homepage-only navigation adjustments. */
+.index-header {
+
+    /* Remove the shadow below the homepage navigation bar. */
+    box-shadow: none;
+
+    /* Keep the header as short as possible above the hero image. */
+    padding: 0 10px;
+
+}
+
+
+/* Make the homepage navigation links shorter vertically as well. */
+.index-header .site-nav a {
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+}
+
+
+/* Remove the hero's normal top padding only on the homepage. */
+.index-header + .hero {
+
+    padding-top: 5px;
+
+}
+
+.index-header + .hero + main .social-section h2 {
+    margin-top: 0;
+}
