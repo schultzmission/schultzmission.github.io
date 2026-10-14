@@ -190,6 +190,15 @@
                     Karanda, and the people we get to meet through the hospital. 
                 </p>
             </div>
+
+            <div class="about-video">
+                <div class="video-frame" data-youtube-id="Lz8EwwBJULg">
+                    <button class="video-play" type="button" aria-label="Play video about our ministry at Karanda">
+                        <img src="images/video-thumbnail.png" alt="">
+                        <span class="video-play-icon" aria-hidden="true">&#9654;</span>
+                    </button>
+                </div>
+            </div>
         </section>
 
         <!-- ======================================================
@@ -704,6 +713,23 @@
             currentIndex = (currentIndex + 1) % storyImages.length;
             showCurrentImage();
             resetRotationTimer();
+        });
+
+        document.querySelectorAll(".video-frame").forEach((videoFrame) => {
+            const playButton = videoFrame.querySelector(".video-play");
+
+            playButton.addEventListener("click", () => {
+                const videoId = videoFrame.dataset.youtubeId;
+                const player = document.createElement("iframe");
+
+                player.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+                player.title = "Video about our ministry at Karanda";
+                player.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                player.referrerPolicy = "strict-origin-when-cross-origin";
+                player.allowFullscreen = true;
+
+                videoFrame.replaceChildren(player);
+            });
         });
 
         showCurrentImage();

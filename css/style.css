@@ -979,6 +979,78 @@ home page. These styles are specifically for the new pages.
     width: 100%;
 }
 
+.about-video {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+}
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin-inline: auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #17212b;
+    box-shadow: 0 10px 25px rgba(31, 41, 55, 0.08);
+}
+
+.video-frame iframe,
+.video-play,
+.video-play img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-frame iframe {
+    display: block;
+    border: 0;
+}
+
+.video-play {
+    display: grid;
+    place-items: center;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    background: #17212b;
+    cursor: pointer;
+}
+
+.video-play img {
+    object-fit: cover;
+}
+
+.video-play-icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: clamp(48px, 8vw, 72px);
+    height: clamp(48px, 8vw, 72px);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    padding-left: 5px;
+    border-radius: 50%;
+    background: rgba(77, 78, 78, 0.6);
+    color: #fff;
+    font-size: 1.8rem;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.video-play:hover .video-play-icon,
+.video-play:focus-visible .video-play-icon {
+    transform: scale(1.08);
+    background: rgba(40, 102, 150, 0.6);
+}
+
+.video-play:focus-visible {
+    outline: 3px solid var(--about-gold);
+    outline-offset: -5px;
+}
+
 .gallery-frame {
     position: relative;
     overflow: hidden;

@@ -16,7 +16,7 @@ For changes to the site:
 2. Make changes
 3. Ctrl + S
 4. Test locally
-5. Terminal:
+5. Terminal:     (PS C:\Users\ben27\OneDrive\Documents\mission-website>)
     git status
     git add .
     git commit -m "Describe changes"
